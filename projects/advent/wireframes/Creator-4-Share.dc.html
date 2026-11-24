@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Creator shares the calendar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 1060px; box-sizing: border-box; display: flex; flex-direction: column; background: #ffffff; font-family: system-ui, sans-serif; color: #222222">
+<div style="height: 844px; box-sizing: border-box; border: 2px solid #222222; display: flex; flex-direction: column; padding: 20px; gap: 16px; overflow: hidden">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 12px; color: #2e7d32; font-weight: 600">Ready</div>
+<div style="font-size: 22px; font-weight: 700">Send it</div>
+</div>
+<div style="box-sizing: border-box; border: 1.5px solid #555555; border-radius: 10px; padding: 14px; display: flex; gap: 14px; align-items: center">
+<div style="width: 64px; height: 64px; box-sizing: border-box; border: 1.5px dashed #777777; border-radius: 8px; flex: none"></div>
+<div style="display: flex; flex-direction: column; gap: 3px; font-size: 14px">
+<div style="font-weight: 700">For (group name)</div>
+<div style="color: #555555">From (your name)</div>
+<div style="color: #555555">1 to 24 Dec 2026</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 12px; color: #555555">Message to send (you can edit it)</div>
+<div style="height: 84px; box-sizing: border-box; border: 1.5px solid #555555; border-radius: 6px; padding: 10px; font-size: 14px; line-height: 20px">I made you something: a calendar that opens a new gift each day. Open it on your phone.</div>
+</div>
+<div style="height: 56px; border-radius: 8px; background: #2b59c3; color: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px"><span style="font-size: 17px; font-weight: 700">Share</span><span style="font-size: 12px">Opens your phone's share sheet</span></div>
+<div style="display: flex; gap: 10px">
+<div style="flex: 1; height: 44px; box-sizing: border-box; border: 1.5px solid #555555; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; text-align: center">Copy link</div>
+<div style="flex: 1; height: 44px; box-sizing: border-box; border: 1.5px solid #555555; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; text-align: center">WhatsApp</div>
+<div style="flex: 1; height: 44px; box-sizing: border-box; border: 1.5px solid #555555; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; text-align: center">Telegram</div>
+<div style="flex: 1; height: 44px; box-sizing: border-box; border: 1.5px solid #555555; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; text-align: center">Email</div>
+</div>
+<div style="font-size: 12px; line-height: 17px; color: #555555">Anyone with this link can read the days that have opened. Don't post it publicly.</div>
+<div style="display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #cccccc; padding-top: 14px">
+<div style="font-size: 14px; font-weight: 600">Group calendar: greet people by name (optional)</div>
+<div style="display: flex; gap: 10px">
+<div style="flex: 1; height: 40px; box-sizing: border-box; border: 1.5px solid #555555; border-radius: 6px; padding: 0 10px; display: flex; align-items: center; color: #8a8a8a; font-size: 14px">Their name</div>
+<div style="width: 104px; height: 40px; box-sizing: border-box; border: 1.5px solid #555555; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600">New link</div>
+</div>
+</div>
+<div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #555555">
+<div>Edit link saved</div>
+<div style="text-decoration: underline">Copy edit link again</div>
+</div>
+</div>
+<div style="flex: 1; box-sizing: border-box; padding: 16px 20px; background: #f2f2ef; font-size: 13px; line-height: 19px; color: #444444">
+<b>Notes</b><br>1. Share opens the phone's own share sheet, so it works with every installed app.<br>2. WhatsApp, Telegram and Email are fallbacks for desktop. Discord uses Copy link.<br>3. Named links only change the greeting. In one-person mode this area becomes "Make a copy for someone else".<br>4. The edit link is never behind a share button.
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1060}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

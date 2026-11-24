@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Recipient doors</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 1060px; box-sizing: border-box; display: flex; flex-direction: column; background: #ffffff; font-family: system-ui, sans-serif; color: #222222">
+<div style="height: 844px; box-sizing: border-box; border: 2px solid #222222; display: flex; flex-direction: column; padding: 20px; gap: 16px; overflow: hidden">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 12px; color: #666666">For (their name)</div>
+<div style="font-size: 22px; font-weight: 700">Day 7 of 24</div>
+<div style="font-size: 13px; color: #555555">5 doors opened</div>
+</div>
+<div style="box-sizing: border-box; border: 1.5px dashed #2b59c3; border-radius: 10px; background: #e6edff; padding: 10px 12px; text-align: center">
+<div style="font-size: 12px; color: #2b59c3">Next gift unlocks in</div>
+<div style="font-size: 26px; font-weight: 700; color: #2b59c3; letter-spacing: 1px">07:12:45</div>
+<div style="font-size: 10px; color: #555555">Shown once every unlocked door is opened</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{doors}}" as="d" hint-placeholder-count="24">
+<sc-if value="{{ d.isOpened }}" hint-placeholder-val="{{ true }}">
+<div style="aspect-ratio: 1; box-sizing: border-box; border: 1.5px solid #888888; border-radius: 8px; background: #e2e2e2; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; color: #555555"><span style="font-size: 18px; font-weight: 700; color: #222222">{{d.n}}</span><span>opened</span></div>
+</sc-if>
+<sc-if value="{{ d.isReady }}" hint-placeholder-val="{{ false }}">
+<div style="aspect-ratio: 1; box-sizing: border-box; border: 2px solid #2b59c3; border-radius: 8px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; color: #2b59c3"><span style="font-size: 18px; font-weight: 700">{{d.n}}</span><span>ready</span></div>
+</sc-if>
+<sc-if value="{{ d.isToday }}" hint-placeholder-val="{{ false }}">
+<div style="aspect-ratio: 1; box-sizing: border-box; border: 3px solid #2b59c3; border-radius: 8px; background: #e6edff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #2b59c3"><span style="font-size: 18px">{{d.n}}</span><span>today</span></div>
+</sc-if>
+<sc-if value="{{ d.isNext }}" hint-placeholder-val="{{ false }}">
+<div style="aspect-ratio: 1; box-sizing: border-box; border: 1.5px dashed #777777; border-radius: 8px; background: #f6f6f4; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 10px; line-height: 12px; color: #555555"><span style="font-size: 16px; font-weight: 700; color: #222222">{{d.n}}</span><span>tomorrow</span></div>
+</sc-if>
+<sc-if value="{{ d.isLocked }}" hint-placeholder-val="{{ false }}">
+<div style="aspect-ratio: 1; box-sizing: border-box; border: 1.5px dashed #bbbbbb; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 11px; color: #999999"><span style="font-size: 16px; font-weight: 700">{{d.n}}</span><span>{{d.label}}</span></div>
+</sc-if>
+</sc-for>
+</div>
+<div style="display: flex; gap: 14px; font-size: 11px; color: #555555; flex-wrap: wrap">
+<span>Opened: grey</span><span>Ready: blue outline</span><span>Today: blue fill</span><span>Locked: dashed</span>
+</div>
+<div style="margin-top: auto; height: 46px; box-sizing: border-box; border: 1.5px solid #555555; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600">Remind me every morning</div>
+</div>
+<div style="flex: 1; box-sizing: border-box; padding: 16px 20px; background: #f2f2ef; font-size: 13px; line-height: 19px; color: #444444">
+<b>Notes</b><br>1. Ready is today's door and any earlier door never opened. Press and hold to unwrap.<br>2. Opened doors reopen instantly with no animation.<br>3. When every unlocked door (including today) is opened, a banner at the top counts down hh:mm:ss to the next gift. The next door itself just says tomorrow. Other locked doors show their date, and a tap rattles them.<br>4. On a wide screen the grid becomes 8 doors a row.
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1060}}'>
+class Component extends DCLogic {
+renderVals() {
+const dates = ['', '', '', '', '', '', '', '', '9 Dec', '10 Dec', '11 Dec', '12 Dec', '13 Dec', '14 Dec', '15 Dec', '16 Dec', '17 Dec', '18 Dec', '19 Dec', '20 Dec', '21 Dec', '22 Dec', '23 Dec', '24 Dec'];
+const doors = [];
+for (let i = 1; i <= 24; i++) {
+doors.push({
+n: i,
+isOpened: i <= 4 || i === 6,
+isReady: i === 5,
+isToday: i === 7,
+isNext: i === 8,
+isLocked: i >= 9,
+label: dates[i - 1]
+});
+}
+return { doors };
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+:root {
+  --red: #C0392B;
+  --green: #2E7D5B;
+  --gold: #F2B134;
+  --navy: #1F3A5F;
+  --cream: #FFF4E0;
+  --text: #1F2933;
+  font-family: system-ui, sans-serif;
+}
+body { margin: 0; }
+
+/* Advent themes: set data-theme on <html>. The accent can be overridden with --accent. */
+:root, [data-theme="classic"] { --bg:#FFF4E0; --text:#1F2933; --accent:#C0392B; --accent2:#2E7D5B; --gold:#F2B134; --on-accent:#FFFFFF; }
+[data-theme="snowy-night"] { --bg:#14213D; --text:#F5F7FA; --accent:#F2B134; --accent2:#DCE6F2; --on-accent:#1F2933; }
+[data-theme="candy-cane"] { --bg:#FFF5F5; --text:#3B1F1F; --accent:#C62828; --accent2:#F8BBD0; --on-accent:#FFFFFF; }
+[data-theme="evergreen"] { --bg:#14342B; --text:#F3EFE0; --accent:#E0B04C; --accent2:#B23A48; --on-accent:#1F2933; }
+[data-theme="gingerbread"] { --bg:#FBEFE0; --text:#3A2416; --accent:#8B4A2B; --accent2:#D98E4A; --on-accent:#FFFFFF; }
+[data-theme="aurora"] { --bg:#0F1B2D; --text:#EAF2FF; --accent:#5EEAD4; --accent2:#A78BFA; --on-accent:#1F2933; }
+body { background: var(--bg); color: var(--text); }
