@@ -5,6 +5,6 @@
   Referrer-Policy: no-referrer
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-# Advent needs Supabase. Replace YOUR-PROJECT with the real project ref in iteration 1.
+# Advent needs Supabase. Replace rjeyehuolftbbxjbdugc with the real project ref in iteration 1.
 /advent/*
-  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob:; font-src 'self'; connect-src 'self' https://YOUR-PROJECT.supabase.co; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob:; font-src 'self'; connect-src 'self' https://rjeyehuolftbbxjbdugc.supabase.co; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
