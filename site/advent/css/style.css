@@ -1,0 +1,13 @@
+/* Colours come from the theme variables in /shared/style.css. Mobile first. */
+*, *::before, *::after { box-sizing: border-box; }
+
+.page { max-width: 1440px; margin: 0 auto; padding: 16px; overflow-wrap: anywhere; }
+h1 { color: var(--accent); }
+
+.builder { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.panel { border: 2px solid var(--accent2); border-radius: 12px; padding: 16px; }
+.panel h2 { margin-top: 0; }
+
+@media (min-width: 640px) { .page { padding: 24px; } }
+@media (min-width: 900px) { .builder { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { .builder { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
