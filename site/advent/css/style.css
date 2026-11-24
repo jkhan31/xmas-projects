@@ -1,0 +1,26 @@
+/* Advent Calendar Builder: page layout only. Colours and themes live in
+   site/shared/style.css. Fluid from 360px to 1440px, mobile first. */
+
+.advent-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 360px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.placeholder {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* The builder (edit.html) grows into two or three columns on wider screens. */
+@media (min-width: 900px) {
+  .advent-builder {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
